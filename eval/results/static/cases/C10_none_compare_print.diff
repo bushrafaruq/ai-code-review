@@ -1,0 +1,9 @@
+diff --git a/app/lists.py b/app/lists.py
+--- /dev/null
++++ b/app/lists.py
+@@ -0,0 +1,5 @@
++def first_or_default(items, default=None):
++    if items == None:
++        return default
++    print("items:", items)
++    return items[0] if items else default

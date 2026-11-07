@@ -1,0 +1,9 @@
+diff --git a/app/health.py b/app/health.py
+--- /dev/null
++++ b/app/health.py
+@@ -0,0 +1,5 @@
++import requests
++
++
++def ping(url):
++    return requests.get(url, verify=False, timeout=5).status_code

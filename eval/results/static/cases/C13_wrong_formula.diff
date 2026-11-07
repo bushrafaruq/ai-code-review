@@ -1,0 +1,8 @@
+diff --git a/app/pricing.py b/app/pricing.py
+--- /dev/null
++++ b/app/pricing.py
+@@ -0,0 +1,4 @@
++def apply_discount(price, percent):
++    if percent > 100 or percent < 0:
++        raise ValueError("percent must be between 0 and 100")
++    return price * percent / 100

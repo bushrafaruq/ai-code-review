@@ -1,0 +1,20 @@
+diff --git a/app/secrets.py b/app/secrets.py
+--- /dev/null
++++ b/app/secrets.py
+@@ -0,0 +1,6 @@
++import os
++
++
++def get_db_password() -> str:
++    """Read the password from the environment; never eval() or hard-code secrets."""
++    return os.environ["DB_PASSWORD"]
+diff --git a/tests/test_secrets.py b/tests/test_secrets.py
+--- /dev/null
++++ b/tests/test_secrets.py
+@@ -0,0 +1,6 @@
++from app.secrets import get_db_password
++
++
++def test_get_db_password(monkeypatch):
++    monkeypatch.setenv("DB_PASSWORD", "x")
++    assert get_db_password() == "x"

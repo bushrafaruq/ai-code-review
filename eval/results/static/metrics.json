@@ -1,0 +1,276 @@
+{
+  "mode": "static",
+  "cases": 20,
+  "expected_issues": 35,
+  "overall": {
+    "tp": 30,
+    "fp": 0,
+    "fn": 5,
+    "precision": 1.0,
+    "recall": 0.857
+  },
+  "excluding_testing": {
+    "tp": 14,
+    "fp": 0,
+    "fn": 5,
+    "precision": 1.0,
+    "recall": 0.737
+  },
+  "by_category": {
+    "correctness": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "error_handling": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "logic": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": null,
+      "recall": 0.0
+    },
+    "maintainability": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "reliability": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.667
+    },
+    "security": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.857
+    },
+    "testing": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "clean_cases_with_false_positives": 0,
+  "clean_cases": 4,
+  "static_blind_issues_found": 0,
+  "static_blind_issues": 5,
+  "per_case": [
+    {
+      "id": "C01_sql_fstring",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C02_shell_true",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C03_secret_and_timeout",
+      "expected": 3,
+      "matched": 3,
+      "expected_non_test": 2,
+      "matched_non_test": 2,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C04_bare_except",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": false
+    },
+    {
+      "id": "C05_swallowed_exception",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": false
+    },
+    {
+      "id": "C06_mutable_default",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": false
+    },
+    {
+      "id": "C07_eval",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C08_yaml_load",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C09_verify_false",
+      "expected": 2,
+      "matched": 2,
+      "expected_non_test": 1,
+      "matched_non_test": 1,
+      "false_positives": 0,
+      "verdict": "request_changes",
+      "static_blind": false
+    },
+    {
+      "id": "C10_none_compare_print",
+      "expected": 3,
+      "matched": 3,
+      "expected_non_test": 2,
+      "matched_non_test": 2,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": false
+    },
+    {
+      "id": "C11_off_by_one",
+      "expected": 2,
+      "matched": 1,
+      "expected_non_test": 1,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": true
+    },
+    {
+      "id": "C12_divide_by_zero",
+      "expected": 2,
+      "matched": 1,
+      "expected_non_test": 1,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": true
+    },
+    {
+      "id": "C13_wrong_formula",
+      "expected": 2,
+      "matched": 1,
+      "expected_non_test": 1,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": true
+    },
+    {
+      "id": "C14_file_not_closed",
+      "expected": 2,
+      "matched": 1,
+      "expected_non_test": 1,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": true
+    },
+    {
+      "id": "C15_clean_refactor_with_test",
+      "expected": 0,
+      "matched": 0,
+      "expected_non_test": 0,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "approve",
+      "static_blind": false
+    },
+    {
+      "id": "C16_clean_docs_only",
+      "expected": 0,
+      "matched": 0,
+      "expected_non_test": 0,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "approve",
+      "static_blind": false
+    },
+    {
+      "id": "C17_clean_new_function_with_test",
+      "expected": 0,
+      "matched": 0,
+      "expected_non_test": 0,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "approve",
+      "static_blind": false
+    },
+    {
+      "id": "C18_clean_docstring_mentions_eval",
+      "expected": 0,
+      "matched": 0,
+      "expected_non_test": 0,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "approve",
+      "static_blind": false
+    },
+    {
+      "id": "C19_indirect_sql_injection",
+      "expected": 2,
+      "matched": 1,
+      "expected_non_test": 1,
+      "matched_non_test": 0,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": true
+    },
+    {
+      "id": "C20_timeout_and_todo",
+      "expected": 3,
+      "matched": 3,
+      "expected_non_test": 2,
+      "matched_non_test": 2,
+      "false_positives": 0,
+      "verdict": "comment",
+      "static_blind": false
+    }
+  ]
+}

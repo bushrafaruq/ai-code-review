@@ -1,0 +1,6 @@
+diff --git a/app/calc.py b/app/calc.py
+--- /dev/null
++++ b/app/calc.py
+@@ -0,0 +1,2 @@
++def calculate(expression: str) -> float:
++    return eval(expression)

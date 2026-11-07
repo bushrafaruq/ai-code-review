@@ -1,0 +1,6 @@
+line-length = 120
+extend-exclude = ["examples"]
+
+[lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]  # long regex patterns and test strings

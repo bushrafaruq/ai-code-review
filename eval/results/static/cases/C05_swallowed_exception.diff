@@ -1,0 +1,9 @@
+diff --git a/app/money.py b/app/money.py
+--- /dev/null
++++ b/app/money.py
+@@ -0,0 +1,5 @@
++def parse_amount(text):
++    try:
++        return float(text.replace(",", ""))
++    except ValueError:
++        pass

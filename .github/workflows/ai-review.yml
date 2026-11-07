@@ -1,0 +1,35 @@
+name: ai-code-review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt anthropic
+      - name: Review the pull request and post a comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: add an ANTHROPIC_API_KEY repository secret to enable the LLM step.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m reviewer.cli review \
+            --git "origin/${{ github.base_ref }}" --repo . \
+            --post-github --pr "${{ github.event.pull_request.number }}" \
+            --github-repo "${{ github.repository }}" \
+            --link-base "https://github.com/${{ github.repository }}/blob/${{ github.event.pull_request.head.sha }}" \
+            > review.md
+          cat review.md >> "$GITHUB_STEP_SUMMARY"
+      # To block merging on high-severity findings, add `--fail-on high` to the command above.

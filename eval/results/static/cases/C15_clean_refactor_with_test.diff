@@ -1,0 +1,21 @@
+diff --git a/app/text.py b/app/text.py
+--- a/app/text.py
++++ b/app/text.py
+@@ -1,2 +1,6 @@
+-def slugify(text):
+-    return text.lower().replace(" ", "-")
++import re
++
++
++def slugify(text: str) -> str:
++    """Lower-case, replace runs of non-alphanumerics with single hyphens."""
++    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+diff --git a/tests/test_text.py b/tests/test_text.py
+--- /dev/null
++++ b/tests/test_text.py
+@@ -0,0 +1,5 @@
++from app.text import slugify
++
++
++def test_slugify_collapses_separators():
++    assert slugify("Hello,  World!") == "hello-world"

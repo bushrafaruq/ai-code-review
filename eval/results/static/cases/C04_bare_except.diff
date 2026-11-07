@@ -1,0 +1,13 @@
+diff --git a/app/config.py b/app/config.py
+--- /dev/null
++++ b/app/config.py
+@@ -0,0 +1,9 @@
++import json
++
++
++def load_config(path):
++    try:
++        with open(path) as f:
++            return json.load(f)
++    except:
++        return {}

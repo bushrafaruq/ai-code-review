@@ -1,0 +1,12 @@
+diff --git a/app/rates.py b/app/rates.py
+--- /dev/null
++++ b/app/rates.py
+@@ -0,0 +1,8 @@
++import requests
++
++API_KEY = "demo-key-1234567890abcdef"
++
++
++def fetch_rates(currency):
++    r = requests.get(f"https://api.example.com/rates/{currency}", headers={"Authorization": API_KEY})
++    return r.json()

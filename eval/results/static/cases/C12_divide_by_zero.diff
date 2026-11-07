@@ -1,0 +1,6 @@
+diff --git a/app/stats.py b/app/stats.py
+--- /dev/null
++++ b/app/stats.py
+@@ -0,0 +1,2 @@
++def average(values):
++    return sum(values) / len(values)

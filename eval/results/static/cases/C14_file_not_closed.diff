@@ -1,0 +1,7 @@
+diff --git a/app/files.py b/app/files.py
+--- /dev/null
++++ b/app/files.py
+@@ -0,0 +1,3 @@
++def count_lines(path):
++    f = open(path)
++    return len(f.readlines())

@@ -1,0 +1,10 @@
+diff --git a/app/settings.py b/app/settings.py
+--- /dev/null
++++ b/app/settings.py
+@@ -0,0 +1,6 @@
++import yaml
++
++
++def read_settings(path):
++    with open(path) as f:
++        return yaml.load(f)

@@ -1,0 +1,8 @@
+# docker compose up --build   ->  http://localhost:8001/docs
+services:
+  reviewer:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}    # optional: enables the LLM step

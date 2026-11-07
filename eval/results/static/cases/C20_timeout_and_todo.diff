@@ -1,0 +1,12 @@
+diff --git a/app/weather.py b/app/weather.py
+--- /dev/null
++++ b/app/weather.py
+@@ -0,0 +1,8 @@
++import requests
++
++
++def get_weather(city):
++    # TODO: add caching
++    resp = requests.get("https://api.example.com/weather", params={"q": city})
++    resp.raise_for_status()
++    return resp.json()

@@ -1,0 +1,21 @@
+diff --git a/app/mathutil.py b/app/mathutil.py
+--- /dev/null
++++ b/app/mathutil.py
+@@ -0,0 +1,4 @@
++def clamp(value: float, low: float, high: float) -> float:
++    if low > high:
++        raise ValueError("low must not exceed high")
++    return max(low, min(value, high))
+diff --git a/tests/test_mathutil.py b/tests/test_mathutil.py
+--- /dev/null
++++ b/tests/test_mathutil.py
+@@ -0,0 +1,9 @@
++import pytest
++
++from app.mathutil import clamp
++
++
++def test_clamp():
++    assert clamp(5, 0, 3) == 3
++    with pytest.raises(ValueError):
++        clamp(1, 2, 0)
